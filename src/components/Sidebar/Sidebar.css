@@ -32,3 +32,11 @@
     color: gray;
 }
 
+.sidebar .recent{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .recent__title{
+    margin-bottom: 1.5rem;
+}
