@@ -40,3 +40,19 @@
 .sidebar .recent__title{
     margin-bottom: 1.5rem;
 }
+
+.sidebar .recent__entry{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: #282828;
+    cursor: pointer;
+}
+
+.sidebar .recent__entry:hover{
+    background-color: rgba(105, 105, 105, 0.2);
+}
+    
