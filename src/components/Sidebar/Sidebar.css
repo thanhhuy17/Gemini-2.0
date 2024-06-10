@@ -55,4 +55,20 @@
 .sidebar .recent__entry:hover{
     background-color: rgba(105, 105, 105, 0.2);
 }
+
+.new__chat{
+    cursor: pointer;
+}
+
+.new__chat:hover{
+    background-color: rgba(105, 105, 105, 0.2);
+}
+
+.recent__entry p{
+    font-size: .8rem;
+}
+
+.bottom p{
+    font-size: .8rem;
+}
     
