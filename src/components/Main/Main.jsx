@@ -1,9 +1,20 @@
 // import React from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import "./Main.css";
+import { Context } from "../../context/Context";
 const Main = () => {
-  const[extended, setExtended] = useState(false)
+  const {
+    onSend,
+    resentPrompt,
+    showResult,
+    loading,
+    resultData,
+    setInput,
+    input,
+  } = useContext(Context);
+
+  const [extended, setExtended] = useState(false);
   return (
     <div className="main">
       <div className="nav">
@@ -12,6 +23,8 @@ const Main = () => {
       </div>
 
       <div className="main__container">
+        {!showResult ? <></> : null}
+
         <div className="greet">
           <p className="greet__gradient">
             <span>Hello, Dev.</span>
@@ -42,17 +55,37 @@ const Main = () => {
 
           <div className="main__bottom">
             <div className="search__box">
-              <input type="text" placeholder="Enter a prompt here" />
+              <input
+                onChange={(e) => setInput(e.target.value)}
+                value={input}
+                type="text"
+                placeholder="Enter a prompt here"
+              />
               <div className="search__box-icon">
-                <img className="search__img-icon" src={assets.gallery_icon} alt="" />
-                <img className="search__img-icon" src={assets.mic_icon} alt="" />
-                {extended?<img className="search__img-icon" src={assets.send_icon} alt="" />:null}
+                <img
+                  className="search__img-icon"
+                  src={assets.gallery_icon}
+                  alt=""
+                />
+                <img
+                  className="search__img-icon"
+                  src={assets.mic_icon}
+                  alt=""
+                />
+                <img
+                  onClick={() => onSend()}
+                  className="search__img-icon"
+                  src={assets.send_icon}
+                  alt=""
+                />
               </div>
             </div>
             <div className="main__botton-descrip">
-              <p>Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps</p>
+              <p>
+                Gemini may display inaccurate info, including about people, so
+                double-check its responses. Your privacy and Gemini Apps
+              </p>
             </div>
-
           </div>
         </div>
       </div>
