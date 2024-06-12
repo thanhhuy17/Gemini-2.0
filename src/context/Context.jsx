@@ -1,25 +1,24 @@
+import { createContext } from "react";
+import run from "../config/gemini";
 
-// import { ChatSession } from "@google/generative-ai";
-// import { createContext } from "react";
+export const Context = createContext();
 
-// export const Context = createContext();
+const ContextProvider = (props)=>{
 
-// const ContextPrivider = (props)=>{
+    const onSend = async(prompt)=>{
+        run(prompt)
+    }
 
-//     const onSend = async(prompt)=>{
-//         await ChatSession(prompt)
-//     }
+    onSend("how is the React")
 
-//     onSend("what is react js?")
+    const contextValue = {
 
-//     const contextValue = {
+    }
 
-//     }
-
-//     return (
-//         <Context.Provider value={contextValue}>
-//             {props.children}
-//         </Context.Provider>
-//     )
-// }
-// export default ContextPrivider
+    return (
+        <Context.Provider value={contextValue}>
+            {props.children}
+        </Context.Provider>
+    )
+}
+export default ContextProvider
