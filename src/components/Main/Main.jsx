@@ -6,7 +6,7 @@ import { Context } from "../../context/Context";
 const Main = () => {
   const {
     onSend,
-    resentPrompt,
+    recentPrompt,
     showResult,
     loading,
     resultData,
@@ -23,9 +23,8 @@ const Main = () => {
       </div>
 
       <div className="main__container">
-        {!showResult ? <></> : null}
-
-        <div className="greet">
+        {!showResult ? <>
+          <div className="greet">
           <p className="greet__gradient">
             <span>Hello, Dev.</span>
           </p>
@@ -53,7 +52,26 @@ const Main = () => {
             <img src={assets.code_icon} alt="image" />
           </div>
 
-          <div className="main__bottom">
+          
+        </div>
+        </> : 
+        <div className="result">
+          <div className="result__title">
+            <img src={assets.user_icon} alt="" />
+            {console.log("huy nguyen: " + recentPrompt)}
+            <p>{recentPrompt}</p> 
+          </div>
+
+          <div className="result__data">
+            <img src={assets.gemini_icon} alt="" />
+            <p dangerouslySetInnerHTML={{__html:resultData}}></p>
+          </div>
+        </div>
+        }
+
+        
+
+        <div className="main__bottom">
             <div className="search__box">
               <input
                 onChange={(e) => setInput(e.target.value)}
@@ -87,7 +105,6 @@ const Main = () => {
               </p>
             </div>
           </div>
-        </div>
       </div>
     </div>
   );
