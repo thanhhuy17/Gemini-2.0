@@ -7,11 +7,12 @@ const App = () => {
   //   <Main/>
   // }</>;
 
-  return (
+  return (    
     <div className="appH">
       <Sidebar />
       <Main />
-    </div>
+    </div>   
+    
   );
 };
 

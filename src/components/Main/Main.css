@@ -151,7 +151,7 @@
     padding: 0.4rem;
     border-radius: 100%;
     border: 2px solid rgba(105, 105, 105, .5);
-    background-color: #3689ee;
+    background-color: #ffffff;
 }
 
 .result__data{
@@ -166,3 +166,41 @@
     height: 3rem;
 }
 
+.result__data p{
+    font-size: 15px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.loader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.loader hr{
+    border-radius: 6px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right,#558DF5, #F15A55);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 2s infinite linear;
+}
+
+
+.recent__entry p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 150px; /* Điều chỉnh chiều rộng theo ý muốn */
+  }
+@keyframes loader{
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
