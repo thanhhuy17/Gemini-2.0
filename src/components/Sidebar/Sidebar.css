@@ -71,4 +71,59 @@
 .bottom p{
     font-size: .8rem;
 }
+
+/* ======= Media ====== */
+@media (max-width: 340px) {
+    .appH{
+        margin: 2rem 1rem;
+    }
+    .sidebar{
+      display: none;
+    }
+    
+    .sidebar .menu {
+        display: block !important;
+    }
+
+    .greet{
+        max-width: 300px;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .greet__gradient{
+        font-size: 2.5rem;
+    }
+
+    .cards {
+        max-width: 300px;
+        grid-template-columns: repeat(auto-fill, 280px);
+        /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+        
+    }
+
+    .nav img{
+        position: absolute;
+        left: 60vw;
+        top: 0;
+    }
+
+    .main__bottom{
+        max-width: 100vw;
+        position: relative;
+    }
+
+    .search__box{
+        position: absolute;
+        min-width: 30%;
+    }
+
+    .search__box input{
+        min-width: 50vw;
+    }
+
+  }
     

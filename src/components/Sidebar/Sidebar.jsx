@@ -6,13 +6,13 @@ import { Context } from "../../context/Context";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
-  const {onSend, prevPrompt, setRecentPrompt} = useContext(Context)
-  
-  const loadPrompt = async(prompt)=>{
-    setRecentPrompt(prompt)
-    await onSend(prompt)
-  }
-  
+  const { onSend, prevPrompt, setRecentPrompt, newChat } = useContext(Context);
+
+  const loadPrompt = async (prompt) => {
+    setRecentPrompt(prompt);
+    await onSend(prompt);
+  };
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -20,32 +20,35 @@ const Sidebar = () => {
           onClick={() => setExtended((prev) => !prev)}
           className="menu"
           src={assets.menu_icon}
-          alt="image" 
+          alt="image"
         />
 
-        <div className="new__chat">
+        <div onClick={() => newChat()} className="new__chat">
           <img src={assets.plus_icon} alt="image" />
           {extended ? <p>New Chat</p> : null}
         </div>
 
-        {extended ? 
-        <div className="recent">
-          <p className="recent__title">Recent</p>             
-          {/* Kiểm tra xem prevPrompts có tồn tại và có chiều dài lớn hơn 0 */}
-          {prevPrompt && prevPrompt.length > 0 && ( 
-            prevPrompt.map((item, index) => {              
-              return(
-                // console.log("huy: " + item)
-                <div onClick={()=>loadPrompt(item)} className="recent__entry" key={index}>
-                  <img src={assets.message_icon} alt="Recent Prompt Icon" />
-                  <p>{item} ...</p>
-                </div>
-              )
-            })
-          )} 
-        </div>
-        : null
-        }
+        {extended ? (
+          <div className="recent">
+            <p className="recent__title">Recent</p>
+            {/* Kiểm tra xem prevPrompts có tồn tại và có chiều dài lớn hơn 0 */}
+            {prevPrompt &&
+              prevPrompt.length > 0 &&
+              prevPrompt.map((item, index) => {
+                return (
+                  // console.log("huy: " + item)
+                  <div
+                    onClick={() => loadPrompt(item)}
+                    className="recent__entry"
+                    key={index}
+                  >
+                    <img src={assets.message_icon} alt="Recent Prompt Icon" />
+                    <p>{item} ...</p>
+                  </div>
+                );
+              })}
+          </div>
+        ) : null}
       </div>
 
       <div className="bottom">

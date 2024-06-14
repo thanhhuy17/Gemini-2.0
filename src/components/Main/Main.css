@@ -36,7 +36,7 @@
 .greet{
     font-size: 3.2rem;
     font-weight: 700;
-    margin-bottom: 15rem;
+    margin-bottom: 8rem;
 }
 
 .greet__gradient{
@@ -92,7 +92,7 @@
     position: relative;
     max-width: 900px;
     margin: auto;
-    padding-top: 14rem;
+    padding-top: 10rem;
 }
 .search__box{
     display: flex;
