@@ -134,13 +134,17 @@
 @media (min-width: 1024px) {
     .sidebar{
         min-height: 100vh;
-        width: 10% !important;
+        width: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background-color: #f0f4f9;
         padding: 25px 15px;
     }
+    .sidebar .new__chat {
+        padding: 10px 15px;
+    }
+    
     
     
 }

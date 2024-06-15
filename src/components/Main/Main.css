@@ -209,8 +209,6 @@
 
 /* =========== Media ============= */
 @media (max-width: 340px){
-    
-
     .result{
         padding: 0;
     }
@@ -405,11 +403,42 @@
 }
 
 @media (min-width: 1024px) {
-    .greet .greet__gradient{
-        font-size: 3.2rem;
-        margin-left: 0;
+    .nav img {
+        left: 75vw;
     }
-    .greet{
+    .greet {
         text-align: start;
+    }
+    .greet .greet__gradient {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 4rem;
+    }
+    .cards {
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+        margin: 0;
+    }
+    .card {
+        min-height: 150px;
+        font-size: 1rem;
+    }
+
+    .main__bottom {
+        position: relative;
+        max-width: 100vw;
+        padding-top: 0;
+    }
+    .search__box-icon {
+        column-gap: 1.5rem;
+    }
+
+    .search__img-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .main__botton-descrip {
+       
+        font-size: 1rem;
     }
 }
