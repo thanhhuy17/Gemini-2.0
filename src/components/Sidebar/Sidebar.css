@@ -1,12 +1,4 @@
-.sidebar{
-    min-height: 100vh;
-    /* width: auto; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f0f4f9;
-    padding: 25px 15px;
-}
+
 
 .sidebar img{
     width: 20px;
@@ -72,6 +64,8 @@
     font-size: .8rem;
 }
 
+
+
 /* ======= Media ====== */
 @media (max-width: 340px) {
     .appH{
@@ -98,32 +92,55 @@
         font-size: 2.5rem;
     }
 
-    .cards {
-        max-width: 300px;
-        grid-template-columns: repeat(auto-fill, 280px);
-        /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
-        
-    }
-
-    .nav img{
-        position: absolute;
-        left: 60vw;
-        top: 0;
-    }
-
-    .main__bottom{
-        max-width: 100vw;
-        position: relative;
-    }
-
-    .search__box{
-        position: absolute;
-        min-width: 30%;
-    }
-
-    .search__box input{
-        min-width: 50vw;
-    }
-
-  }
     
+}
+@media (min-width: 340px) {
+    .appH{
+        margin: 2rem 1rem;
+    }
+    .sidebar{
+       display: none;
+    }
+    
+}
+
+
+/* ======= For medium Device ======== */
+@media (min-width: 576px) {
+    .sidebar{
+        width: 20%;
+        padding: 2rem 0.5rem;
+    }
+
+    .sidebar .menu {
+        margin-left: 4px;
+    }
+
+    .sidebar .new__chat{
+        padding: 5px 5px;
+        font-size: .8rem;
+        gap: 0.5rem;
+    }
+
+    .sidebar .recent__entry {
+        padding: 1rem 0;
+        gap: .5rem;
+    }
+
+        
+}
+    
+/* ======= For large Device ======== */
+@media (min-width: 1024px) {
+    .sidebar{
+        min-height: 100vh;
+        width: 10% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #f0f4f9;
+        padding: 25px 15px;
+    }
+    
+    
+}
